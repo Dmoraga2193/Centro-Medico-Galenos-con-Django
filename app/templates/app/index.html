@@ -1,0 +1,122 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+<div class="page-hero bg-image overlay-dark" style="background-image: url(../static/app/img/centro-medico_1.jpg);">
+<div class="hero-section">
+    <div class="container text-center wow zoomIn">
+        <span class="subhead">Hacemos tu vida mucho más feliz </span>
+        <h1 class="display-4">Vida saludable</h1>
+        <a href="contact.html" class="btn btn-primary">Consultanos</a>
+    </div>
+</div>
+</div>
+
+<!-- .page-section -->
+
+<div class="page-section pb-0">
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-lg-6 py-3 wow fadeInUp">
+            <h1>Bienvenido al Centro Medico Galenos <br> </h1>
+            <p class="text-grey mb-4"> Contamos con los mejores especialistas médicos de distintas áreas para
+                mejorar tu salud.</p>
+            <a href="about.html" class="btn btn-primary">Leer más...</a>
+        </div>
+        <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
+            <div class="img-place custom-img-1">
+                <img src="{% static 'app/img/bg-doctor.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+</div> <!-- .bg-light -->
+</div> <!-- .bg-light -->
+
+<div class="page-section">
+<div class="container">
+    <h1 class="text-center mb-5 wow fadeInUp">Nuestros Doctores Destacados del Mes</h1>
+
+    <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
+
+        <div class="item">
+            <div class="card-doctor">
+                <div class="header">
+                    <img src="{% static 'app/img/doctors/doctor_1.jpg' %}" alt="">
+                </div>
+                <div class="body">
+                    <p class="text-xl mb-0">Dr. Marie Curie</p>
+                    <span class="text-sm text-grey">Cardiologa</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="card-doctor">
+                <div class="header">
+                    <img src="{% static 'app/img/doctors/doctor_2.jpg' %}" alt="">
+                </div>
+                <div class="body">
+                    <p class="text-xl mb-0">Dr. Alex Melvin</p>
+                    <span class="text-sm text-grey">Dental</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="card-doctor">
+                <div class="header">
+                    <img src="{% static 'app/img/doctors/doctor_3.jpg' %}" alt="">
+                </div>
+                <div class="body">
+                    <p class="text-xl mb-0">Dr. Rosalind Franklin</p>
+                    <span class="text-sm text-grey">Medicina General</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="page-section">
+<div class="container">
+    <h1 class="text-center wow fadeInUp">Pedir una cita</h1>
+
+    <form class="main-form">
+        <div class="row mt-5 ">
+            <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+                <input type="text" class="form-control" placeholder="Nombre completo">
+            </div>
+            <div class="col-12 col-sm-6 py-2 wow fadeInRight">
+                <input type="text" class="form-control" placeholder="Correo electronico">
+            </div>
+            <div class="col-12 col-sm-6 py-2 wow fadeInLeft" data-wow-delay="300ms">
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
+                <select name="departement" id="departement" class="custom-select">
+                    <option value="general">Medicina General</option>
+                    <option value="cardiology">Cardiología</option>
+                    <option value="dental">Dental</option>
+                    <option value="neurology">Neurología</option>
+                    <option value="orthopaedics">Traumatología</option>
+                </select>
+            </div>
+            <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
+                <input type="text" class="form-control" placeholder="Numero de contacto: +569...">
+            </div>
+            <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
+                <textarea name="message" id="message" class="form-control" rows="6"
+                    placeholder="Deje su mensaje..."></textarea>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Enviar solicitud</button>
+    </form>
+</div>
+</div> <!-- .page-section -->
+
+{% endblock %}
+

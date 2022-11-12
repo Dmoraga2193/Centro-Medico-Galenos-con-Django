@@ -1,0 +1,65 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block contenido %}
+
+
+
+  <div class="page-banner overlay-dark bg-image" style="background-image: url(../static/app/img/centro-medico.jpg);">
+    <div class="banner-section">
+      <div class="container text-center wow fadeInUp">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+          </ol>
+        </nav>
+        <h1 class="font-weight-normal">Contacto</h1>
+      </div> <!-- .container -->
+    </div> <!-- .banner-section -->
+  </div> <!-- .page-banner -->
+
+  <div class="page-section">
+    <div class="container">
+      <h1 class="text-center wow fadeInUp">Contacto</h1>
+
+      <form class="contact-form mt-5">
+        <div class="row mb-3">
+          <div class="col-sm-6 py-2 wow fadeInLeft">
+            <label for="fullName">Nombre</label>
+            <input type="text" id="fullName" class="form-control" placeholder="Nombre completo">
+          </div>
+          <div class="col-sm-6 py-2 wow fadeInRight">
+            <label for="emailAddress">Email</label>
+            <input type="text" id="emailAddress" class="form-control" placeholder="Correo electronico">
+          </div>
+          <div class="col-12 py-2 wow fadeInUp">
+            <label for="subject">Solicitud</label>
+            <input type="text" id="subject" class="form-control" placeholder="Ingresar solicitud">
+          </div>
+          <div class="col-12 py-2 wow fadeInUp">
+            <label for="message">Mensaje</label>
+            <textarea id="message" class="form-control" rows="8" placeholder="Escribir mensaje..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary wow zoomIn">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row mx-auto">
+        <div class="mx-auto col-sm-6 col-lg-3 py-3">
+          <h5>Contacto</h5>
+          <p class="footer-link mt-2">Antonio Varas 360, Santiago, Providencia, Región Metropolitana</p>
+          <a href="#" class="footer-link">+569 123 44556677</a>
+          <a href="#" class="footer-link">centro_medico@galenos.com</a>
+
+        </div>
+      </div>
+
+      <hr>
+
+
+    </div>
+{% endblock %}
