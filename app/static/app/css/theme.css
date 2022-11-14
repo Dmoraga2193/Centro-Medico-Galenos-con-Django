@@ -8,15 +8,15 @@
  */
 
 :root {
-  --primary: #00D9A5;
+  --primary: #0d6efd;;
   --accent: #FF3D85;
-  --secondary: #4E5AFE;
-  --warning: #EED818;
-  --info: #05B4E1;
-  --danger: #FF4943;
-  --success: #96C93D;
-  --dark: #343531;
-  --light: #F5F9F6;
+  --secondary: #6c757d;
+  --warning: #ffc107;
+  --info: #0dcaf0;
+  --danger: #dc3545;
+  --success: #198754;
+  --dark: #212529;
+  --light: #f8f9fa;
   --cs: #596261;
   --grey: #6E807A;
 }
@@ -264,26 +264,32 @@ a.text-dark:hover, a.text-dark:focus {
 /* Buttons */
 .btn-primary {
   color: #fff;
-  background-color: #00D9A5;
-  border-color: transparent;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
 }
-
-.btn-primary.disabled, .btn-primary:disabled {
+.btn-primary:hover {
   color: #fff;
-  background-color: #07be94;
-  border-color: transparent;
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
 }
-
-.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
-.show > .btn-primary.dropdown-toggle {
+.btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
-  background-color: #00D9A5;
-  border-color: #07be94;
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+  box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
 }
-
-.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
-.show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: none;
+.btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #0a58ca;
+  border-color: #0a53be;
+}
+.btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
+}
+.btn-primary:disabled, .btn-primary.disabled {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
 }
 
 .btn-accent {
@@ -312,7 +318,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .btn-secondary {
   color: #fff;
-  background-color: #4E5AFE;
+  background-color: #6c757d;
   border-color: transparent;
 }
 
