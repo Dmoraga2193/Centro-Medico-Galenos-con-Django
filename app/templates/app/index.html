@@ -3,6 +3,8 @@
 {% load static %}
 
 {% block contenido %}
+{% load crispy_forms_tags %}
+
 
 <div class="page-hero bg-image overlay-dark" style="background-image: url(../static/app/img/centro-medico_1.jpg);">
 <div class="hero-section">
@@ -37,7 +39,7 @@
 
 <div class="page-section">
 <div class="container">
-    <h1 class="text-center mb-5 wow fadeInUp">Nuestros Doctores Destacados del Mes</h1>
+    <h1 class="text-center mb-5 wow fadeInUp">Nuestros Medicos Destacados</h1>
 
     <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
 
@@ -81,42 +83,46 @@
 </div>
 
 <div class="page-section">
-<div class="container">
-    <h1 class="text-center wow fadeInUp">Pedir una cita</h1>
+    <div class="container">
+        <h1 class="text-center wow fadeInUp">Pedir una cita</h1>
 
-    <form class="main-form">
-        <div class="row mt-5 ">
-            <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
-                <input type="text" class="form-control" placeholder="Nombre completo">
-            </div>
-            <div class="col-12 col-sm-6 py-2 wow fadeInRight">
-                <input type="text" class="form-control" placeholder="Correo electronico">
-            </div>
-            <div class="col-12 col-sm-6 py-2 wow fadeInLeft" data-wow-delay="300ms">
-                <input type="date" class="form-control">
-            </div>
-            <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
-                <select name="departement" id="departement" class="custom-select">
-                    <option value="general">Medicina General</option>
-                    <option value="cardiology">Cardiología</option>
-                    <option value="dental">Dental</option>
-                    <option value="neurology">Neurología</option>
-                    <option value="orthopaedics">Traumatología</option>
-                </select>
-            </div>
-            <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
-                <input type="text" class="form-control" placeholder="Numero de contacto: +569...">
-            </div>
-            <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
-                <textarea name="message" id="message" class="form-control" rows="6"
-                    placeholder="Deje su mensaje..."></textarea>
-            </div>
-        </div>
+        <form class="main-form" method="POST">
+            <div class="row mt-3 ">
 
-        <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Enviar solicitud</button>
-    </form>
+                {% csrf_token %}
+                {{ form | crispy }} 
+
+                <!-- <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+                    <input type="text" class="form-control" placeholder="Nombre completo">
+                </div>
+                <div class="col-12 col-sm-6 py-2 wow fadeInRight">
+                    <input type="text" class="form-control" placeholder="Correo electronico">
+                </div>
+                <div class="col-12 col-sm-6 py-2 wow fadeInLeft" data-wow-delay="300ms">
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
+                    <select name="departement" id="departement" class="custom-select">
+                        <option value="general">Medicina General</option>
+                        <option value="cardiology">Cardiología</option>
+                        <option value="dental">Dental</option>
+                        <option value="neurology">Neurología</option>
+                        <option value="orthopaedics">Traumatología</option>
+                    </select>
+                </div>
+                <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
+                    <input type="text" class="form-control" placeholder="Numero de contacto: +569...">
+                </div>
+                <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
+                    <textarea name="message" id="message" class="form-control" rows="6"
+                        placeholder="Deje su mensaje..."></textarea>
+                </div> -->
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Enviar cita</button>
+        </form>
+    </div>
 </div>
-</div> <!-- .page-section -->
 
 {% endblock %}
 

@@ -1,0 +1,35 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+<div class="card">
+    <div class="col-md-6 offset-md-3">
+        <div class="card-body">
+            <h2>Listar pacientes disponibles</h2>
+            <hr>
+            <table class="table table-striped table-hover tab-responsive-sm">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Fecha de la Cita</th>
+                    <th>Area Medica</th>
+                </tr>
+            
+                {% for c in pacientes %}
+            
+                <tr>
+                    <td>{{ c.nombre | title }}</td>
+                    <td>{{ c.apellido_paterno | capfirst }}</td>
+                    <td>{{ c.apellido_materno | capfirst }}</td>
+                    <td>{{ c.fecha_consulta | capfirst }}</td>
+                    <td>{{ c.area_medica | title }}</td>
+                </tr>
+                
+                {% endfor %}
+            </table>
+        </div>
+    </div>    
+</div>
+
+
+{% endblock%}

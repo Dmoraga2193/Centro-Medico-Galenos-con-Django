@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+
+{% load crispy_forms_tags %}
+<br><br>
+<div class="row">
+    <div class="col-12 col-md6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h2>Modificar Cita</h2>
+                <hr>
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form }}
+                    <div class="d-flex justify-content-center">
+                        <input type="reset" value="Cancelar" class="btn btn-secondary">
+                        &nbsp;
+                        <input type="submit" value="Modificar" class="btn btn-primary">
+                    </div>                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}

@@ -1,12 +1,23 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_list_or_404
 from django.contrib import messages
-from .forms import ContactoForm, CustomUserCreationForm
+from .forms import ContactoForm, CustomUserCreationForm, CitaForm, Cita
 from django.contrib.auth import authenticate, login
 
 # Create your views here.
 
-def index(request):    
-    return render(request, 'app/index.html')
+def index(request):  
+    data = {
+        'form': CitaForm()
+    }
+    
+    if request.method == 'POST':
+        formulario = CitaForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Cita Enviada"
+        else:
+            data["form"] = formulario  
+    return render(request, 'app/index.html', data)
 
 def contact(request):
     data = {
@@ -41,3 +52,18 @@ def registro(request):
             return redirect(to="home")
         data["form"] = formulario
     return render(request, 'registration/registro.html', data)
+
+def listar_pacientes(request):
+    pacientes = Cita.objects.all()
+
+    data = {
+        'pacientes': pacientes
+    }
+    return render(request, 'app/pacientes/listar.html',data)
+
+def modificar_cita(request,id):
+    cita = get_list_or_404(Cita, id=id)
+    data = {
+        'form' : CitaForm(instance=cita)
+    }
+    return render(request, 'app/pacientes/modificar.html',data)
