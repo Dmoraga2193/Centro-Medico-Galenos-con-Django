@@ -65,6 +65,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'contact' %}">Contacto</a>
                         </li>
+                        {% if perms.app.view_paciente %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'listar_pacientes' %}">Listar Pacientes</a>
+                        </li>
+                        {% endif %}
                         <!-- <li class="nav-item">
                             <a class="btn btn-primary ml-lg-3" href="#">Iniciar sesión / Registrarse</a>
                         </li> -->

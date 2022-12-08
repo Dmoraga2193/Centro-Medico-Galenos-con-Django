@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_list_or_404
 from django.contrib import messages
 from .forms import ContactoForm, CustomUserCreationForm, CitaForm, Cita
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views here.
 
@@ -53,6 +54,7 @@ def registro(request):
         data["form"] = formulario
     return render(request, 'registration/registro.html', data)
 
+@permission_required('app.view_paciente')
 def listar_pacientes(request):
     pacientes = Cita.objects.all()
 
